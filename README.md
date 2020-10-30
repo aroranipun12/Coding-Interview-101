@@ -4,7 +4,7 @@ I add about 10 solutions everyday to the repository. All the solutions are most 
 This List is compiled by [Love Babbar](https://www.youtube.com/channel/UCQHLxxBFrbfdrk1jF0moTpw)
 
 ## Step 1
-Download the excel file for the list of questions
+Download the excel file named 'List.xlsx' for the list of questions
 
 ## Step 2
 Try to code it yourself (atleast give 15 mins of thought)
