@@ -11,3 +11,6 @@ Try to code it yourself (atleast give 15 mins of thought)
 
 ## Step 3
 If you cannot think of any logic then see my code
+
+## Step 4
+If you can think of a better solution, let me know 
