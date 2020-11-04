@@ -10,7 +10,7 @@ Download the excel file named 'List.xlsx' for the list of questions
 Try to code it yourself (atleast give 15 mins of thought)
 
 ## Step 3
-If you cannot think of any logic then see my code
+If you cannot think of any logic then see code and then after understanding the logic try to code it yourself
 
 ## Step 4
 If you can think of a better solution, let me know 
