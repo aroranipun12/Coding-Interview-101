@@ -42,6 +42,7 @@ int main() {
 		edges[k - 1].push_back(j - 1);
 	}
 	unordered_set<unordered_set<int>*>* components = getComponents(edges, n);
+	cout<<components->size()<<"nipun"<<endl;
 	unordered_set<unordered_set<int>*>::iterator it = components->begin();
 	while (it != components->end()) {
 		unordered_set<int>* component = *it;

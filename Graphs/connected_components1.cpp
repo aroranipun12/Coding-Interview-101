@@ -46,7 +46,7 @@ int main(){
 	}
 
 	vector<vector<int>> output = getComponents(edges,n);
-
+	cout<<output.size()<<endl;
 	for(auto itr = output.begin();itr!=output.end();itr++){
 		vector<int> component = *itr;
 		for(auto itr1 = component.begin();itr1!=component.end();itr1++){
