@@ -1,6 +1,6 @@
 # Coding-Interview-101
 A list of 450 Questions to master Data Structures and Algorithms for Coding Interviews.
-I code about 5 problems everyday and add them to this repo. I have copied code from gfg for some problems(easier).
+I code about 5 problems everyday and add them to this repo.I have pasted gfg links for common and easier problems.
 This List is compiled by [Love Babbar](https://www.youtube.com/channel/UCQHLxxBFrbfdrk1jF0moTpw)
 
 ## Step 1
