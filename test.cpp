@@ -290,8 +290,71 @@ void mirrorify(node* root,node** mirror){
     mirrorify(root->left,&(*mirror)->right);
     mirrorify(root->right,&(*mirror)->left);
 }
+int findIndex(string str,int si,int ei){
+    if(si > ei)
+        return -1;
+    stack<char> s;
 
+    for(int i=si;i<=ei;i++){
+        if(str[i] == '(')
+            s.push(str[i]);
+        else if(str[i] == ')'){
+            if(s.top() == '('){
+                s.pop();
+            
+            //if at any iteration stack i empty then this is the required index
+            if(s.empty())
+                return i;
+            }
+        }
+    }
+return -1;//not found
+}
+//starting index and ending index
+node* buildTreeFromString(string str,int si,int ei){
+    if(si>ei)
+        return NULL;
 
+    node* root = new node(str[si] - '0');//interger m convert krne ke liye subtract
+    int index = -1;
+    if(si + 1 <= ei && str[si+1] == '(' ){
+         index = findIndex(str,si+1,ei);
+    }    
+    //now index of starting ( is si+1 and ) is index variable (left subtree)
+    //index of starting ( is index+1 and ending ) is ei-1 (right subtree)
+
+    if(index != -1){
+        root->left = buildTreeFromString(str,si+2,index-1);
+        root->right = buildTreeFromString(str,index+2,ei-1);
+    }
+return root;
+}
+
+void checkHelper(node* root,vector<int> &leaf_level,int level){
+    if(!root)
+        return;
+    if(!root->left && !root->right){
+        leaf_level.push_back(level);
+        return;
+    }
+    checkHelper(root->left,leaf_level,level+1);
+    checkHelper(root->right,leaf_level,level+1);
+}
+
+/*You are required to complete this method*/
+bool check(node *root)
+{
+    //Your code here
+    vector<int> leaf_level;
+    checkHelper(root,leaf_level,0);
+    for(int i=0;i<leaf_level.size();i++)
+    {
+        /*if(leaf_level[i] != leaf_level[i-1])
+            return false;*/
+        cout<<leaf_level[i]<<" ";
+    }
+return true;
+}
 int main( int argc , char ** argv )
 {
     ios_base::sync_with_stdio(false) ; 
@@ -343,11 +406,18 @@ int main( int argc , char ** argv )
     // topView(root);
     // cout<<endl;
     // bottomView(root);
-    node* rootMirror = NULL ;
+   /* node* rootMirror = NULL ;
     mirrorify(root,&rootMirror);
     inorder_iterative(root);
     cout<<endl;
-    inorder_iterative(rootMirror);
+    inorder_iterative(rootMirror);*/
+
+    string str = "4(2(3)(1))(6(5)(4))";
+    node* root_1 = buildTreeFromString(str, 0, str.length() - 1);
+    //preorder_iterative(root_1);
+    bool ans = check(root_1);
+
+
 
     return 0;
 } 
